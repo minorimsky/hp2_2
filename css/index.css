@@ -280,18 +280,17 @@ a {
 
 .news-list__item {
   display: flex;
-  padding-bottom: 10px;
+  padding-bottom: 19px;
   border-bottom: 1px solid #bcbcbc;
 }
 .news-list__item span {
-  margin-top: 5px;
   margin-left: 25px;
   vertical-align: bottom;
 }
 .news-list__item p {
   display: inline-block;
   margin-left: 30px;
-  font-size: 20px;
+  font-size: 16px;
 }
 .news-list__item:not(:first-child) {
   margin-top: 20px;
@@ -343,11 +342,12 @@ a {
 .news-button {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 19px;
+  width: 75px;
+  height: 20px;
   padding-right: 17px;
   color: #333;
-  line-height: 19px;
+  font-size: 20px;
+  line-height: 20px;
   font-weight: 700;
   transition: all 0.3s;
 }
@@ -369,8 +369,8 @@ a {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   background-image: url(../img/news-arrow.png);
   background-repeat: no-repeat;
   background-position: center center;

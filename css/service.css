@@ -324,9 +324,15 @@ a {
   margin-top: 50px;
 }
 @media screen and (min-width: 960px) {
+  .cases__item:nth-child(odd) .cases-item__right {
+    margin-left: auto;
+  }
   .cases__item:nth-child(even) {
     flex-direction: row-reverse;
     margin-left: auto;
+  }
+  .cases__item:nth-child(even) .cases-item__right {
+    margin-right: auto;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 959px) {
@@ -455,7 +461,6 @@ a {
 
 .cases-item__right {
   width: 485px;
-  margin-left: auto;
 }
 @media screen and (min-width: 768px) and (max-width: 959px) {
   .cases-item__right {

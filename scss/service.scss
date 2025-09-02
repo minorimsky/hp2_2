@@ -319,9 +319,20 @@ a {
 
   @include breakpoints.mq(pc) {
 
+    &:nth-child(odd) {
+
+      .cases-item__right {
+        margin-left: auto;
+      }
+    }
+
     &:nth-child(even) {
       flex-direction: row-reverse;
       margin-left: auto;
+
+      .cases-item__right {
+        margin-right: auto;
+      }
     }
   }
 
@@ -438,7 +449,6 @@ a {
 }
 .cases-item__right {
   width: 485px;
-  margin-left: auto;
 
   @include breakpoints.mq(tb) {
     width: 485px;

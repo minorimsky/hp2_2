@@ -99,6 +99,9 @@ a {
 
   @include breakpoints.mq(sp) {
     display: block;
+    width: clamp(16.875rem, 11.058rem + 29.08vw, 25rem);
+    margin-right: auto;
+    margin-left: auto;
 
     &:not(:first-child) {
       margin-top: 20px;
@@ -204,7 +207,7 @@ a {
   }
 
   @include breakpoints.mq(sp) {
-    max-width: 100%;
+    width: clamp(15.75rem, 9.128rem + 33.11vw, 25rem);
 
     [type="text"],
     [type="email"],
@@ -212,7 +215,7 @@ a {
       width: 100%;
       height: 42px;
       margin-top: 10px;
-      padding: 13px 20px;
+      padding: 13px 10px;
       appearance: 0;
       color: #808080;
       font-size: 14px;
@@ -228,7 +231,8 @@ a {
 
   @include breakpoints.mq(sp) {
     width: 100%;
-    margin-left: 0;
+    margin-left: auto;
+    margin-left: auto;
   }
 }
 .contact-form-select {
@@ -246,6 +250,11 @@ a {
     background-image: url(../img/セレクトボックス.png);
     background-size: contain;
     background-repeat: no-repeat;
+  }
+
+  @include breakpoints.mq(sp) {
+    margin-top: 10px;
+    margin-left: 0;
   }
 }
 select {
@@ -294,7 +303,7 @@ textarea {
   }
 
   @include breakpoints.mq(sp) {
-    width: 100%;
+    width: clamp(15.75rem, 9.128rem + 33.11vw, 25rem);
     margin-top: 10px;
   }
 }

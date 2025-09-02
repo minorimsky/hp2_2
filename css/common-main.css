@@ -53,9 +53,7 @@ section {
 }
 @media screen and (max-width: 767px) {
   .section-wrap {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    width: 85%;
   }
 }
 
@@ -89,7 +87,7 @@ section {
 @media screen and (max-width: 767px) {
   .section__title {
     padding-left: 10px;
-    font-size: 20px;
+    font-size: clamp(1.25rem, 1.071rem + 0.89vw, 1.5rem);
     line-height: 28px;
   }
   .section__title::before {
@@ -369,11 +367,11 @@ section {
 }
 #h-nav li {
   border-bottom: solid 2px #fff;
-  padding-bottom: 17px;
+  padding-bottom: 18px;
   text-align: center;
 }
 #h-nav li:not(:first-child) {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 #h-nav li a {
   display: block;

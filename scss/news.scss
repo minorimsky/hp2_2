@@ -11,7 +11,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-} 
+}
 
 body {
   font-family: $font;
@@ -85,7 +85,7 @@ a {
   }
 
   @include breakpoints.mq(sp) {
-    height: calc(150 / 265 * 100%);
+    aspect-ratio: 29 / 15;
   }
 }
 .news-list-item__contents {

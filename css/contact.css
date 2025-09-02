@@ -100,6 +100,9 @@ a {
 @media screen and (max-width: 767px) {
   .contact-form__row {
     display: block;
+    width: clamp(16.875rem, 11.058rem + 29.08vw, 25rem);
+    margin-right: auto;
+    margin-left: auto;
   }
   .contact-form__row:not(:first-child) {
     margin-top: 20px;
@@ -192,7 +195,7 @@ a {
 }
 @media screen and (max-width: 767px) {
   .contact-form__input {
-    max-width: 100%;
+    width: clamp(15.75rem, 9.128rem + 33.11vw, 25rem);
   }
   .contact-form__input [type=text],
   .contact-form__input [type=email],
@@ -200,7 +203,7 @@ a {
     width: 100%;
     height: 42px;
     margin-top: 10px;
-    padding: 13px 20px;
+    padding: 13px 10px;
     -webkit-appearance: 0;
        -moz-appearance: 0;
             appearance: 0;
@@ -220,7 +223,8 @@ a {
 @media screen and (max-width: 767px) {
   .contact-form__input-textarea {
     width: 100%;
-    margin-left: 0;
+    margin-left: auto;
+    margin-left: auto;
   }
 }
 
@@ -239,6 +243,12 @@ a {
   background-image: url(../img/セレクトボックス.png);
   background-size: contain;
   background-repeat: no-repeat;
+}
+@media screen and (max-width: 767px) {
+  .contact-form-select {
+    margin-top: 10px;
+    margin-left: 0;
+  }
 }
 
 select {
@@ -293,7 +303,7 @@ textarea {
 }
 @media screen and (max-width: 767px) {
   textarea {
-    width: 100%;
+    width: clamp(15.75rem, 9.128rem + 33.11vw, 25rem);
     margin-top: 10px;
   }
 }

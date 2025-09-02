@@ -80,7 +80,7 @@ a {
 }
 @media screen and (max-width: 767px) {
   .news-list-item__image {
-    height: 56.6037735849%;
+    aspect-ratio: 29/15;
   }
 }
 

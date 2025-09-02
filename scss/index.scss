@@ -313,9 +313,10 @@ a {
     }
 
     @include breakpoints.mq(sp) {
-        padding-bottom: 5px;
+        padding-bottom: 11px;
 
         span {
+            margin-top: 5px;
             margin-left: 5px;
             font-size: 12px;
         }
@@ -326,8 +327,8 @@ a {
         }
 
         &:not(:first-child) {
-                margin-top: 17px;
-            }
+            margin-top: 10px;
+        }
     }
 }
 .news__button {

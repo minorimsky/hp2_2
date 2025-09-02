@@ -60,13 +60,13 @@ a {
   }
 
   @include breakpoints.mq(sp) {
-    height: 100px;
+    height: clamp(6.25rem, 1.776rem + 22.37vw, 12.5rem);
     margin-top: 60px;
 
     h2 {
-      top: 38px;
-      left: 15px;
-      font-size: 20px;
+      top: clamp(2.375rem, 0.451rem + 9.62vw, 5.063rem);
+      left: clamp(0.938rem, -1.971rem + 14.54vw, 5rem);
+      font-size: clamp(1.25rem, 0.713rem + 2.68vw, 2rem);
     }
   }
 }
@@ -84,7 +84,7 @@ a {
   }
 
   @include breakpoints.mq(sp) {
-    height: 100px;
+    height: clamp(6.25rem, 1.776rem + 22.37vw, 12.5rem);
   }
 }
 

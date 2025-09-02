@@ -205,8 +205,10 @@ a {
 }
 @media screen and (max-width: 767px) {
   .business-item__top {
-    width: 100%;
+    width: clamp(15.75rem, 14.497rem + 6.26vw, 17.5rem);
     height: 100%;
+    margin-right: auto;
+    margin-left: auto;
     aspect-ratio: 90/53;
   }
 }
@@ -526,8 +528,6 @@ a {
     width: 100%;
     margin-left: 0;
     padding-top: 5px;
-    padding-right: 10px;
-    padding-left: 10px;
     line-height: 1.5;
   }
 }

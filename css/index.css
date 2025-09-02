@@ -307,9 +307,10 @@ a {
 }
 @media screen and (max-width: 767px) {
   .news-list__item {
-    padding-bottom: 5px;
+    padding-bottom: 11px;
   }
   .news-list__item span {
+    margin-top: 5px;
     margin-left: 5px;
     font-size: 12px;
   }
@@ -318,7 +319,7 @@ a {
     font-size: 16px;
   }
   .news-list__item:not(:first-child) {
-    margin-top: 17px;
+    margin-top: 10px;
   }
 }
 

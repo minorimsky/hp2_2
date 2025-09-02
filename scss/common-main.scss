@@ -54,9 +54,7 @@ section {
     }
 
     @include breakpoints.mq(sp) {
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
+        width: 85%;
     }
 }
 .section__title {
@@ -89,7 +87,7 @@ section {
 
     @include breakpoints.mq(sp) {
         padding-left: 10px;
-        font-size: 20px;
+        font-size: clamp(1.25rem, 1.071rem + 0.89vw, 1.5rem);
         line-height: 28px;
 
         &::before {
@@ -98,7 +96,7 @@ section {
         }
     }
 }
- 
+
 /*header*/
 .header {
     position: fixed;
@@ -376,11 +374,11 @@ section {
 
     li {
         border-bottom: solid 2px #fff;
-        padding-bottom: 17px;
+        padding-bottom: 18px;
         text-align: center;
 
         &:not(:first-child) {
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         a {

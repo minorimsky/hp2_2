@@ -1,0 +1,544 @@
+@use "color";
+@use "breakpoints";
+
+$font: "Noto Sans JP", sans-serif;
+
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: $font;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+}
+img {
+    width: 100%;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+/*fv*/
+.fv {
+    position: relative;
+    width: 100%;
+    height: 752px;
+    margin-top: 80px;
+    background-image: url(../img/fv.jpg);
+    background-size: cover;
+    background-position: 50% 40%;
+    z-index: 0;
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.25);
+        z-index: -1;
+    }
+
+    @include breakpoints.mq(tb) {
+        height: 600px;
+        margin-top: 60px;
+    }
+
+    @include breakpoints.mq(sp) {
+        height: 505px;
+        margin-top: 60px;
+    }
+}
+.fv-wrap {
+    max-width: 1224px;
+    margin: 0 auto;
+    height: inherit;
+}
+.fv-wrap__title {
+    margin-left: 5%;
+    padding-top: 248px;
+    color: #333;
+
+    h1 {
+        width: 474px;
+        padding: 30px 60px 30px 30px;
+        background-color: #fff;
+        font-size: 48px;
+        font-weight: $font-weight-bold;
+        line-height: 72px;
+    }
+
+    p {
+        display: inline-block;
+        margin-top: 60px;
+        padding: 30px;
+        background-color: #fff;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    @include breakpoints.mq(tb) {
+        padding-top: 210px;
+
+        h1 {
+            width: 296px;
+            padding: 20px;
+            font-size: 32px;
+            line-height: 64px;
+        }
+
+        p {
+            width: 485px;
+            margin-top: 50px;
+            padding: 20px;
+            line-height: 1.5;
+        }
+    }
+
+    @include breakpoints.mq(sp) {
+        margin-left: 15px;
+        padding-top: 235px;
+
+        h1 {
+            width: 212px;
+            padding: 10px;
+            font-size: 24px;
+            line-height: 36px;
+        }
+        p {
+            width: 255px;
+            margin-top: 30px;
+            padding: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    }
+}
+
+/*事業内容*/
+.service {
+    background-image: color.$gradient;
+}
+.service-wrap {
+
+    @include breakpoints.mq(tb) {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+    }
+
+    @include breakpoints.mq(sp) {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+    }
+}
+.service-title {
+
+    @include breakpoints.mq(tb) {
+        margin-left: 80px;
+    }
+
+    @include breakpoints.mq(sp) {
+        margin-left: 15px;
+    }
+}
+.service__items {
+    display: flex;
+    width: 100%;
+    margin-top: 60px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include breakpoints.mq(tb) {
+        margin-top: 40px;
+    }
+
+    @include breakpoints.mq(sp) {
+        display: block;
+        margin-top: 30px;
+    }
+}
+.service__item {
+    width: calc(100% / 3);
+    height: clamp(12.5rem, 6.25rem + 10.42vw, 15.625rem);
+    text-align: center;
+    align-items: center;
+
+    @include breakpoints.mq(tb) {
+        width: clamp(16rem, -0.084rem + 33.51vw, 20rem);
+        height: 200px;
+    }
+
+    @include breakpoints.mq(sp) {
+        width: 100%;
+        height: 200px;
+    }
+}
+.service-item__link {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: clamp(12.5rem, 6.25rem + 10.42vw, 15.625rem);
+    transition: .6s cubic-bezier(0.33, 1, 0.68, 1);
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../img/矢印ボタン\　右1.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &:hover {
+        transform: scale(0.9);
+    }
+
+    @include breakpoints.mq(tb) {
+        height: 200px;
+    }
+
+    @include breakpoints.mq(sp) {
+
+        &::after {
+            right: 15px;
+            bottom: 15px;
+        }
+    }
+}
+.service-item__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.5;
+    }
+} 
+.service-item__text {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+}
+
+/*news*/
+.news {
+
+}
+.news__lists {
+    width: 800px;
+    margin-top: 60px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include breakpoints.mq(tb) {
+        width: clamp(38rem, -10.251rem + 100.52vw, 50rem);
+        margin-top: 40px;
+    }
+
+    @include breakpoints.mq(sp) {
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+.news__list {
+
+}
+.news-list__item {
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bcbcbc;
+
+    span {
+        margin-top: 5px;
+        margin-left: 25px;
+        vertical-align: bottom;
+    }
+
+    p {
+        display: inline-block;
+        margin-left: 30px;
+        font-size: 20px;
+    }
+
+    &:not(:first-child) {
+        margin-top: 20px;
+    }
+
+    @include breakpoints.mq(tb) {
+
+        span {
+            margin-top: 2px;
+            font-size: 14px;
+        }
+
+        p {
+            margin-left: 40px;
+            font-size: 16px;
+        }
+    }
+
+    @include breakpoints.mq(sp) {
+        padding-bottom: 5px;
+
+        span {
+            margin-left: 5px;
+            font-size: 12px;
+        }
+
+        p {
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
+        &:not(:first-child) {
+                margin-top: 17px;
+            }
+    }
+}
+.news__button {
+    width: 60px;
+    height: 19px;
+    margin-top: 40px;
+    margin-left: auto;
+
+    @include breakpoints.mq(tb) {
+        margin-top: 10px;
+    }
+
+    @include breakpoints.mq(sp) {
+        margin-top: 15px;
+    }
+}
+.news-button {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 19px;
+    padding-right: 17px;
+    color: #333;
+    line-height: 19px;
+    font-weight: $font-weight-bold;
+    transition: all 0.3s;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: color.$accent-color;
+        transform-origin: right top;
+        transform: scale(0, 1);
+        transition: transform .3s;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        background-image: url(../img/news-arrow.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        &::before {
+            transform-origin: left top;
+            transform: scale(1, 1);
+        }
+    }
+
+    @include breakpoints.mq(sp) {
+        width: 47px;
+        height: 14px;
+        padding-right: 15px;
+        font-size: 12px;
+        line-height: 14px;
+
+        &::after {
+            width: 10px;
+            height: 10px;
+        }
+    }
+}
+
+/*会社概要*/
+.about {
+    background-image: color.$gradient;
+}
+.about-wrap {
+
+    @include breakpoints.mq(tb) {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+    }
+
+    @include breakpoints.mq(sp) {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+    }
+}
+.about-title {
+
+    @include breakpoints.mq(tb) {
+        margin-left: 80px;
+    }
+
+    @include breakpoints.mq(sp) {
+        margin-left: 15px;
+    }
+}
+.about__items {
+    display: flex;
+    width: 100%;
+    margin-top: 60px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include breakpoints.mq(tb) {
+        margin-top: 40px;
+    }
+
+    @include breakpoints.mq(sp) {
+        display: block;
+        margin-top: 30px;
+    }
+}
+.about__item {
+    width: calc(100% / 3);
+    height: clamp(12.5rem, 6.25rem + 10.42vw, 15.625rem);
+    text-align: center;
+    align-items: center;
+
+    @include breakpoints.mq(tb) {
+        width: clamp(16rem, -0.084rem + 33.51vw, 20rem);
+        height: 200px;
+    }
+
+    @include breakpoints.mq(sp) {
+        width: 100%;
+        height: 200px;
+    }
+}
+.about-item__link {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: clamp(12.5rem, 6.25rem + 10.42vw, 15.625rem);
+    transition: .6s cubic-bezier(0.33, 1, 0.68, 1);
+
+    &:hover {
+        transform: scale(0.9);
+    }
+
+    @include breakpoints.mq(tb) {
+        height: 200px;
+    }
+
+    @include breakpoints.mq(sp) {
+
+        &::after {
+            right: 15px;
+            bottom: 15px;
+        }
+    }
+}
+.about-item__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.5;
+    }
+}
+.about-item__text {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.about-item-text {
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        right: -25px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../img/about-arrow.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+iframe {
+    max-width: 100%;
+    height: clamp(12.5rem, 6.25rem + 10.42vw, 15.625rem);
+}

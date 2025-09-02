@@ -1,0 +1,172 @@
+@charset "UTF-8";
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+
+img {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*top*/
+.top {
+  position: relative;
+  width: 100%;
+  height: clamp(12.5rem, -5rem + 29.17vw, 21.25rem);
+  margin-top: 80px;
+}
+.top h2 {
+  position: absolute;
+  top: clamp(5.063rem, -2.438rem + 12.5vw, 8.813rem);
+  left: clamp(5rem, -11rem + 26.67vw, 13rem);
+  font-size: clamp(2rem, 3.33vw, 3rem);
+  z-index: 10;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  .top {
+    height: 200px;
+    margin-top: 60px;
+  }
+  .top h2 {
+    top: 81px;
+    left: 80px;
+    font-size: clamp(1.25rem, -1.766rem + 6.28vw, 2rem);
+  }
+}
+@media screen and (max-width: 767px) {
+  .top {
+    height: 100px;
+    margin-top: 60px;
+  }
+  .top h2 {
+    top: 38px;
+    left: 15px;
+    font-size: 20px;
+  }
+}
+
+.top-image {
+  height: clamp(12.5rem, -5rem + 29.17vw, 21.25rem);
+}
+.top-image img {
+  height: 100%;
+  filter: opacity(0.4);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  .top-image {
+    height: clamp(12.5rem, -5rem + 29.17vw, 21.25rem);
+  }
+}
+@media screen and (max-width: 767px) {
+  .top-image {
+    height: 100px;
+  }
+}
+
+/*breadcrumb*/
+.breadcrumb {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  .breadcrumb {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .breadcrumb {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.breadcrumb-wrapper {
+  width: clamp(54rem, 34rem + 33.33vw, 64rem);
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  .breadcrumb-wrapper {
+    width: clamp(38rem, -10rem + 100vw, 49.938rem);
+  }
+}
+@media screen and (max-width: 767px) {
+  .breadcrumb-wrapper {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.breadcrumb-wrapper__list {
+  display: flex;
+}
+
+.breadcrumb-wrapper__list__item {
+  padding-right: 10px;
+}
+.breadcrumb-wrapper__list__item::after {
+  display: inline-block;
+  content: "";
+  width: 12px;
+  height: 12px;
+  margin-left: 10px;
+  background-image: url(../img/パンくず.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.breadcrumb-wrapper__list__item:last-child {
+  padding-right: 0;
+}
+.breadcrumb-wrapper__list__item:last-child::after {
+  display: none;
+}
+.breadcrumb-wrapper__list__item a {
+  color: #333;
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  .breadcrumb-wrapper__list__item::after {
+    width: 8px;
+    height: 8px;
+  }
+  .breadcrumb-wrapper__list__item a {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .breadcrumb-wrapper__list__item::after {
+    width: 8px;
+    height: 8px;
+    margin-left: 5px;
+    margin-bottom: 1px;
+  }
+  .breadcrumb-wrapper__list__item a {
+    font-size: 12px;
+  }
+}
+
+.b-color {
+  color: #4E71FF;
+  font-weight: 700;
+}

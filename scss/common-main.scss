@@ -1,0 +1,509 @@
+@use "color";
+@use "breakpoints";
+
+$font: "Noto Sans JP", sans-serif;
+
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 8px;
+}
+body {
+    font-family: $font;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    background-color: #fff;
+}
+img {
+    width: 100%;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+section {
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @include breakpoints.mq(tb) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @include breakpoints.mq(sp) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+.section-wrap {
+    width: clamp(54rem, 34rem + 33.33vw, 64rem);
+    margin: 0 auto;
+
+    @include breakpoints.mq(tb) {
+        width: clamp(38rem, -10rem + 100vw, 49.938rem);
+    }
+
+    @include breakpoints.mq(sp) {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+.section__title {
+    position: relative;
+    padding-left: 40px;
+    font-size: 36px;
+    font-weight: $font-weight-bold;
+    line-height: 44px;
+
+    &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 44px;
+        background-color: color.$accent-color;
+    }
+
+    @include breakpoints.mq(tb) {
+        padding-left: 20px;
+        font-size: 24px;
+        line-height: 31px;
+
+        &::before {
+            height: 31px;
+        }
+    }
+
+    @include breakpoints.mq(sp) {
+        padding-left: 10px;
+        font-size: 20px;
+        line-height: 28px;
+
+        &::before {
+            width: 5px;
+            height: 28px;
+        }
+    }
+}
+ 
+/*header*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #FFF;
+    z-index: 999;
+
+    @include breakpoints.mq(tb) {
+        height: 60px;
+    }
+
+    @include breakpoints.mq(sp) {
+        height: 60px;
+    }
+}
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: calc(1280px + 160px);
+    margin: 0 auto;
+    padding-right: 80px;
+    padding-left: 80px;
+
+    @include breakpoints.mq(tb) {
+        max-width: 100%;
+        padding-right: 0;
+        padding-left: clamp(0.938rem, -15.398rem + 34.03vw, 5rem);
+    }
+
+    @include breakpoints.mq(sp) {
+        max-width: 100%;
+        padding-left: 15px;
+    }
+}
+.header-wrap__logo {
+    width: 190px;
+    margin-top: 20px;
+
+    @include breakpoints.mq(tb) {
+        width: 142px;
+        margin-top: 15px;
+    }
+
+    @include breakpoints.mq(sp) {
+        width: 142px;
+        margin-top: 15px;
+    }
+}
+.header-wrap-logo {
+    display: block;
+    transition: 0.3s;
+
+    img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+.header-wrap__nav {
+    margin-top: 21px;
+
+    @include breakpoints.mq(tb) {
+        display: none;
+    }
+
+    @include breakpoints.mq(sp) {
+        display: none;
+    }
+}
+.header-wrap__nav__list {
+    display: flex;
+}
+.header-wrap__nav__list__item {
+    margin-top: 9px;
+
+    &:not(:first-child) {
+        margin-left: 30px;
+    }
+
+    a {
+        position: relative;
+        display: inline-block;
+        color: #333;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            background-color: color.$accent-color;
+            border-radius: 50px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        &:hover {
+
+            &::after {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+.header-wrap__nav__list__button {
+    margin-left: 30px;
+
+    a {
+        display: inline-block;
+        padding: 8px 13px;
+        background-color: color.$accent-color;
+        border: 2px solid color.$accent-color;
+        color: #fff;
+        text-align: center;
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: #fff;
+            color: #333;
+        }
+    }
+}
+.h-open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    cursor: pointer;
+    background-color: color.$accent-color;
+    text-align: center;
+    z-index: 9999;
+
+    @include breakpoints.mq(pc) {
+        display: none;
+    }
+
+    @include breakpoints.mq(tb) {
+        width: 60px;
+    }
+
+    @include breakpoints.mq(sp) {
+        width: 60px;
+    }
+
+    span {
+        display: inline-block;
+        position: absolute;
+        border-radius: 50px;
+        background-color: #fff;
+        transition: all 0.4s;
+
+        @include breakpoints.mq(tb) {
+            height: 4px;
+
+            &:nth-of-type(1) {
+                top: 15px;
+                left: 10px;
+                width: 40px;
+            }
+
+            &:nth-of-type(2) {
+                top: 27px;
+                left: 19px;
+                width: 30px;
+            }
+
+            &:nth-of-type(3) {
+                top: 39px;
+                left: 29px;
+                width: 20px;
+            }
+        }
+
+        @include breakpoints.mq(sp) {
+            height: 4px;
+
+            &:nth-of-type(1) {
+                top: 15px;
+                left: 10px;
+                width: 40px;
+            }
+
+            &:nth-of-type(2) {
+                top: 27px;
+                left: 19px;
+                width: 30px;
+            }
+
+            &:nth-of-type(3) {
+                top: 39px;
+                left: 29px;
+                width: 20px;
+            }
+        }
+    }
+
+    &.active {
+        background-color: #fff;
+
+        span {
+            background-color: color.$accent-color;
+
+            @include breakpoints.mq(tb) {
+
+                &:nth-of-type(1) {
+                    top: 23px;
+                    left: 11px;
+                    transform: translateY(6px) rotate(-45deg);
+                    width: 40px;
+                }
+
+                &:nth-of-type(2) {
+                    opacity: 0;
+                }
+
+                &:nth-of-type(3) {
+                    top: 36px;
+                    left: 11px;
+                    transform: translateY(-6px) rotate(45deg);
+                    width: 40px;
+                }
+            }
+
+            @include breakpoints.mq(sp) {
+
+                &:nth-of-type(1) {
+                    top: 23px;
+                    left: 11px;
+                    transform: translateY(6px) rotate(-45deg);
+                    width: 40px;
+                }
+
+                &:nth-of-type(2) {
+                    opacity: 0;
+                }
+
+                &:nth-of-type(3) {
+                    top: 36px;
+                    left: 11px;
+                    transform: translateY(-6px) rotate(45deg);
+                    width: 40px;
+                }
+            }
+        }
+    }
+}
+#h-nav {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: -120%;
+    width: 100%;
+    height: 100vh;
+    background-color: color.$accent-color;
+    transition: all 0.6s;
+
+    ul {
+        position: absolute;
+        z-index: 999;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
+
+    li {
+        border-bottom: solid 2px #fff;
+        padding-bottom: 17px;
+        text-align: center;
+
+        &:not(:first-child) {
+            margin-top: 40px;
+        }
+
+        a {
+            display: block;
+            width: 100%;
+            color: #fff;
+            font-size: clamp(0.9rem, 0.773rem + 0.64vw, 1.25rem);
+            font-weight: 400;
+        }
+    }
+
+    &.panelactive {
+        right: 0;
+    }
+
+    @include breakpoints.mq(pc) {
+        display: none;
+    }
+}
+
+/*footer*/
+.footer {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    background-color: color.$accent-color;
+    color: #fff;
+    text-align: center;
+
+    @include breakpoints.mq(tb) {
+        padding-top: 30px;
+        padding-bottom: 10px;
+    }
+
+    @include breakpoints.mq(sp) {
+        padding-top: 30px;
+        padding-bottom: 10px;
+    }
+}
+.footer-wrap {
+
+}
+.footer__logo {
+    width: 190px;
+    height: 40px;
+    margin: 0 auto;
+
+    @include breakpoints.mq(tb) {
+        width: 142px;
+        height: 30px;
+    }
+
+    @include breakpoints.mq(sp) {
+        width: 142px;
+        height: 30px;
+    }
+}
+.footer-logo {
+
+    img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.footer__nav {
+    width: 378px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include breakpoints.mq(tb) {
+        width: 312px;
+        margin-top: 20px;
+    }
+
+    @include breakpoints.mq(sp) {
+        width: 100%;
+        margin-top: 30px;
+    }}
+.footer__links {
+    display: flex;
+    gap: 30px;
+
+    @include breakpoints.mq(tb) {
+        gap: 20px;
+    }
+
+    @include breakpoints.mq(sp) {
+        display: block;
+        gap: 0;
+
+    }
+}
+.footer__link {
+
+    a {
+        display: inline-block;
+        color: #fff;
+    }
+
+    @include breakpoints.mq(tb) {
+        font-size: 14px;
+    }
+
+    @include breakpoints.mq(sp) {
+
+        font-size: 14px;
+
+        &:not(:first-child) {
+                margin-top: 14px;
+            }
+    }
+}
+.footer-copyright {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 12px;
+
+    @include breakpoints.mq(tb) {
+        margin-top: 40px;
+    }
+
+    @include breakpoints.mq(sp) {
+        margin-top: 35px;
+    }
+}

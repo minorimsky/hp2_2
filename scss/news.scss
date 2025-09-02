@@ -1,0 +1,263 @@
+@use "color";
+@use "breakpoints";
+
+$font: "Noto Sans JP", sans-serif;
+
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+} 
+
+body {
+  font-family: $font;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+
+img {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*news*/
+.news {
+
+}
+.news__items {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    justify-content: space-between;
+
+    @include breakpoints.mq(tb) {
+      row-gap: 30px;
+      margin-top: 40px;
+    }
+
+    @include breakpoints.mq(sp) {
+      display: block;
+      margin-top: 30px;
+    }
+}
+.news-list__item {
+  width: calc((100% - 80px) / 3);
+  box-shadow: 0 4px 4px rgba(#000000, 0.25);
+
+  @include breakpoints.mq(tb) {
+    width: 200px;
+  }
+
+  @include breakpoints.mq(sp) {
+    width: 100%;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+}
+.news-list-item__image {
+  width: 100%;
+  height: 160px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include breakpoints.mq(tb) {
+    height: 103px;
+  }
+
+  @include breakpoints.mq(sp) {
+    height: calc(150 / 265 * 100%);
+  }
+}
+.news-list-item__contents {
+  padding: 15px 30px;
+
+  @include breakpoints.mq(tb) {
+    padding: 10px;
+  }
+
+  @include breakpoints.mq(sp) {
+    padding: 10px;
+  }
+}
+.news-list-item__tag {
+  display: inline-block;
+  padding: 3px 10px;
+  background-color: color.$accent-color;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+
+  @include breakpoints.mq(tb) {
+    font-size: 12px;
+  }
+
+  @include breakpoints.mq(sp) {
+    font-size: 12px;
+  }
+}
+.news-list-item__title {
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: $font-weight-bold;
+
+  @include breakpoints.mq(tb) {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  @include breakpoints.mq(sp) {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+}
+.news-list-item__date {
+  margin-top: 17px;
+  font-size: 14px;
+
+  @include breakpoints.mq(tb) {
+    margin-top: 35px;
+    font: 12px;
+  }
+
+  @include breakpoints.mq(sp) {
+    margin-top: 30px;
+    font: 12px;
+  }
+}
+.news__num {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+
+  @include breakpoints.mq(tb) {
+    margin-top: 30px;
+  }
+
+  @include breakpoints.mq(sp) {
+    margin-top: 30px;
+  }
+}
+.news-num__item {
+  display: block;
+  margin-top: 2px;
+  margin-left: 9px;
+
+  a {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: solid 2px color.$accent-color;
+    text-align: center;
+    color: color.$accent-color;
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    line-height: 36px;
+    text-align: center;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: color.$accent-color;
+      color: #fff;
+    }
+  }
+
+  @include breakpoints.mq(tb) {
+
+    a{
+      width: 30px;
+      height: 30px;
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+
+  @include breakpoints.mq(sp) {
+
+    a{
+      width: 30px;
+      height: 30px;
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+}
+.news-num__item-arrow {
+  margin-top: 2px;
+
+  &:first-child {
+    margin-right: 11px;
+  }
+
+  &:last-child {
+    margin-left: 20px;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: color.$accent-color;
+    opacity: 0.7;
+    text-align: center;
+
+    img {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+    }
+  }
+
+  @include breakpoints.mq(tb) {
+
+    a {
+      width: 30px;
+      height: 30px;
+
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+  @include breakpoints.mq(sp) {
+
+    a {
+      width: 30px;
+      height: 30px;
+
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,182 @@
+@use "color";
+@use "breakpoints";
+
+$font: "Noto Sans JP", sans-serif;
+
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+
+img {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*top*/
+.top {
+  position: relative;
+  width: 100%;
+  height: clamp(12.5rem, -5rem + 29.17vw, 21.25rem);
+  margin-top: 80px;
+
+  h2 {
+    position: absolute;
+    top: clamp(5.063rem, -2.438rem + 12.5vw, 8.813rem);
+    left: clamp(5rem, -11rem + 26.67vw, 13rem);
+    font-size: clamp(2rem, 3.33vw, 3rem);
+    z-index: 10;
+  }
+
+  @include breakpoints.mq(tb) {
+    height: 200px;
+    margin-top: 60px;
+
+    h2 {
+      top: 81px;
+      left: 80px;
+      font-size: clamp(1.25rem, -1.766rem + 6.28vw, 2rem);
+    }
+  }
+
+  @include breakpoints.mq(sp) {
+    height: 100px;
+    margin-top: 60px;
+
+    h2 {
+      top: 38px;
+      left: 15px;
+      font-size: 20px;
+    }
+  }
+}
+.top-image {
+  height: clamp(12.5rem, -5rem + 29.17vw, 21.25rem);
+
+  img {
+    height: 100%;
+    filter: opacity(0.4);
+    object-fit: cover;
+    }
+
+  @include breakpoints.mq(tb) {
+    height: clamp(12.5rem, -5rem + 29.17vw, 21.25rem);
+  }
+
+  @include breakpoints.mq(sp) {
+    height: 100px;
+  }
+}
+
+/*breadcrumb*/
+.breadcrumb {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @include breakpoints.mq(tb) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  @include breakpoints.mq(sp) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+.breadcrumb-wrapper {
+  width: clamp(54rem, 34rem + 33.33vw, 64rem);
+  margin: 0 auto;
+
+  @include breakpoints.mq(tb) {
+    width: clamp(38rem, -10rem + 100vw, 49.938rem);
+  }
+
+  @include breakpoints.mq(sp) {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+} 
+.breadcrumb-wrapper__list {
+  display: flex;
+}
+.breadcrumb-wrapper__list__item {
+  padding-right: 10px;
+
+  &::after {
+    display: inline-block;
+  content: "";
+  width: 12px;
+  height: 12px;
+  margin-left: 10px;
+  background-image: url(../img/パンくず.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  }
+
+  &:last-child {
+    padding-right: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  a {
+      color: #333;
+      font-size: 16px;
+  }
+
+  @include breakpoints.mq(tb) {
+
+    &::after {
+      width: 8px;
+      height: 8px;
+    }
+
+
+    a {
+      font-size: 14px;
+    }
+  }
+
+  @include breakpoints.mq(sp) {
+
+    &::after {
+      width: 8px;
+      height: 8px;
+      margin-left: 5px;
+      margin-bottom: 1px;
+    }
+
+    a {
+      font-size: 12px;
+    }
+  }
+}
+.b-color {
+  color: #4E71FF;
+  font-weight: $font-weight-bold;
+}

@@ -58,7 +58,7 @@ a {
   box-shadow: 0 4px 4px rgba(#000000, 0.25);
 
   @include breakpoints.mq(tb) {
-    width: 200px;
+    width: calc((100% - 30px) / 2);
   }
 
   @include breakpoints.mq(sp) {

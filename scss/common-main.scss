@@ -20,6 +20,19 @@ body {
     line-height: 1.5;
     background-color: #fff;
 }
+
+:root {
+    scroll-padding: 80px;
+    scroll-behavior: smooth;
+
+    @include breakpoints.mq(tb) {
+        scroll-padding: 60px;
+    }
+
+    @include breakpoints.mq(sp) {
+        scroll-padding: 50px;
+    }
+}
 img {
     width: 100%;
 }
@@ -137,7 +150,7 @@ section {
 }
 .header-wrap__logo {
     width: 190px;
-    margin-top: 20px;
+    margin-top: 17px;
 
     @include breakpoints.mq(tb) {
         width: 142px;
@@ -164,7 +177,7 @@ section {
     }
 }
 .header-wrap__nav {
-    margin-top: 21px;
+    margin-top: 18px;
 
     @include breakpoints.mq(tb) {
         display: none;
@@ -178,7 +191,7 @@ section {
     display: flex;
 }
 .header-wrap__nav__list__item {
-    margin-top: 9px;
+    margin-top: 10px;
 
     &:not(:first-child) {
         margin-left: 30px;
